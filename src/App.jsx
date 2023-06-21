@@ -1,15 +1,11 @@
-import MainLayout from "./layouts/MainLayout";
-
-import Home from "./pages";
+import Home from "./pages/Home";
 
 const App = () => {
   return (
     <>
-      <MainLayout>
-        <Home />
-      </MainLayout>
+      <Home />
     </>
   );
-}
+};
 
 export default App;

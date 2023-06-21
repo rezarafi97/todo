@@ -19,12 +19,12 @@ import TodayIcon from "@mui/icons-material/Today";
 import ListIcon from "@mui/icons-material/List";
 import AddTaskIcon from "@mui/icons-material/AddTask";
 import TaskIcon from "@mui/icons-material/Task";
-import AlarmIcon from "@mui/icons-material/Alarm";
+import StarOutlineIcon from "@mui/icons-material/StarOutline";
 
-const ImportantTask = ({ task }) => {
+const Undone = ({ task }) => {
   let content;
 
-  if (task.important === true) {
+  if (task.done === false) {
     content = (
       <Grid xs={12} md={4} lg={3}>
         <Card sx={{ backgroundColor: "rgb(220,220,220)" }}>
@@ -54,14 +54,14 @@ const ImportantTask = ({ task }) => {
         </Card>
       </Grid>
     );
-  } else if (task.important === false) {
+  } else if (task.done === true) {
     content = null;
   }
 
   return <>{content}</>;
 };
 
-const Important = () => {
+const UndoneTasks = () => {
   const [open, setOpen] = useState(false);
 
   const drawerHandler = () => {
@@ -88,7 +88,7 @@ const Important = () => {
     content = <Spinner text="درحال بارگذاری..." />;
   } else if (isSuccess) {
     content = sortedTasks.map((task) => (
-      <ImportantTask key={task.id} task={task} />
+      <Undone key={task.id} task={task} />
     ));
   } else if (isError) {
     content = <div>{error}</div>;
@@ -96,8 +96,8 @@ const Important = () => {
 
   return (
     <>
-      <Typography variant="h5" sx={{ margin: 4, color: "rgb(120,120,120)" }}>
-        برنامه های مهم
+    <Typography variant="h5" sx={{margin: 4, color: "rgb(120,120,120)"}}>
+        برنامه های انجام نشده
       </Typography>
       <Grid
         container
@@ -150,8 +150,8 @@ const Important = () => {
             },
           }}
         >
-          <Link to="/tasksList">
-            <ListIcon sx={{ color: "black", marginTop: "8px" }} />
+          <Link to="/tasksList/important">
+            <StarOutlineIcon sx={{ color: "black", marginTop: "8px" }} />
           </Link>
         </Fab>
       </Zoom>
@@ -184,8 +184,8 @@ const Important = () => {
             },
           }}
         >
-          <Link to="/tasksList/done">
-            <TaskIcon sx={{ color: "black", marginTop: "8px" }} />
+          <Link to="/tasksList">
+            <ListIcon sx={{ color: "black", marginTop: "8px" }} />
           </Link>
         </Fab>
       </Zoom>
@@ -201,8 +201,8 @@ const Important = () => {
             },
           }}
         >
-          <Link to="/tasksList/undone">
-            <AlarmIcon sx={{ color: "black", marginTop: "8px" }} />
+          <Link to="/tasksList/done">
+            <TaskIcon sx={{ color: "black", marginTop: "8px" }} />
           </Link>
         </Fab>
       </Zoom>
@@ -210,4 +210,6 @@ const Important = () => {
   );
 };
 
-export default Important;
+export default UndoneTasks;
+
+

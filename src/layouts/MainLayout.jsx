@@ -4,7 +4,6 @@ import rtlPlugin from "stylis-plugin-rtl";
 
 import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
-import Grid from "@mui/material/Unstable_Grid2";
 
 import { prefixer } from "stylis";
 import { theme } from "./theme";
@@ -22,13 +21,11 @@ const MainLayout = () => {
   return (
     <ThemeProvider theme={theme}>
       <CacheProvider value={cacheRtl}>
-        <Grid container sx={{ height: "100vh" }}>
           <Navbar />
 
           <div>
             <Outlet />
           </div>
-        </Grid>
       </CacheProvider>
     </ThemeProvider>
   );
