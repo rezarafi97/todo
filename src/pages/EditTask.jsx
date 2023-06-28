@@ -1,5 +1,5 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
-import { useGetTaskQuery, useEditTaskMutation } from "../api/apiSLice";
+import { useGetTaskQuery, useEditTaskMutation } from "../reducers/tasksSlice";
 import { useState } from "react";
 import { Box, Typography, Fab, Divider } from "@mui/material";
 import SaveIcon from "@mui/icons-material/Save";

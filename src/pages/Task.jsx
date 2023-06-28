@@ -4,7 +4,7 @@ import {
   useGetTaskQuery,
   useDeleteTaskMutation,
   useEditTaskMutation,
-} from "../api/apiSLice";
+} from "../reducers/tasksSlice";
 import Spinner from "../components/commons/Spinner";
 import { Box, Typography, Checkbox, Divider, Fab } from "@mui/material";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";

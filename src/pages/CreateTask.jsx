@@ -2,7 +2,7 @@ import { Box, Typography, Fab, Divider, Zoom } from "@mui/material";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import SaveIcon from "@mui/icons-material/Save";
 import { useState } from "react";
-import { useAddNewTaskMutation } from "../api/apiSLice";
+import { useAddNewTaskMutation } from "../reducers/tasksSlice";
 import { nanoid } from "@reduxjs/toolkit";
 import { useNavigate, Link } from "react-router-dom";
 import ScatterPlotIcon from "@mui/icons-material/ScatterPlot";
