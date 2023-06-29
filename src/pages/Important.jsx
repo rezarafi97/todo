@@ -7,20 +7,6 @@ import Grid from "@mui/material/Unstable_Grid2";
 import FabNavigators from "../components/commons/FabNavigators";
 import SingleTask from "../components/tasks/SingleTask";
 
-const ImportantTask = ({ task }) => {
-  let content;
-
-  if (task.important === true) {
-    content = (
-        <SingleTask task={task} />
-    );
-  } else if (task.important === false) {
-    content = null;
-  }
-
-  return <>{content}</>;
-};
-
 const Important = () => {
   const {
     data: tasks = [],
@@ -30,11 +16,13 @@ const Important = () => {
     error,
   } = useGetAllTasksQuery();
 
+  const filteredTasks = tasks.filter(task => task.important === true);
+
   const sortedTasks = useMemo(() => {
-    const sortedTasks = tasks.slice();
+    const sortedTasks = filteredTasks.slice();
     sortedTasks.sort((a, b) => a.date.localeCompare(b.date));
     return sortedTasks;
-  }, [tasks]);
+  }, [filteredTasks]);
 
   let content;
 
@@ -42,7 +30,7 @@ const Important = () => {
     content = <Spinner text="درحال بارگذاری..." />;
   } else if (isSuccess) {
     content = sortedTasks.map((task) => (
-      <ImportantTask key={task.id} task={task} />
+      <SingleTask key={task.id} task={task} />
     ));
   } else if (isError) {
     content = <div>{error}</div>;
