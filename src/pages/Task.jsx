@@ -128,6 +128,10 @@ const Task = () => {
     }
   };
 
+  const historyBack = () => {
+    navigate(-1);
+  };
+
   let content;
 
   if (isLoading) {
@@ -211,10 +215,9 @@ const Task = () => {
                 width: "3rem",
                 height: "3rem",
               }}
+              onClick={historyBack}
             >
-              <Link to="/tasksList">
-                <ArrowBackIcon sx={{ marginTop: "8px" }} />
-              </Link>
+                <ArrowBackIcon sx={{ color: "rgb(100, 100, 100)" }} />
             </Fab>
           </Box>
         </Box>

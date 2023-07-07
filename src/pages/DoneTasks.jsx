@@ -16,8 +16,7 @@ const DoneTasks = () => {
     error,
   } = useGetAllTasksQuery();
 
-  const filteredTasks = tasks.filter(task => task.done === true);
-
+  const filteredTasks = tasks.filter((task) => task.done === true);
 
   const sortedTasks = useMemo(() => {
     const sortedTasks = filteredTasks.slice();
@@ -30,7 +29,9 @@ const DoneTasks = () => {
   if (isLoading) {
     content = <Spinner text="درحال بارگذاری..." />;
   } else if (isSuccess) {
-    content = sortedTasks.map((task) => <SingleTask key={task.id} task={task} />);
+    content = sortedTasks.map((task) => (
+      <SingleTask key={task.id} task={task} />
+    ));
   } else if (isError) {
     content = <div>{error}</div>;
   }
