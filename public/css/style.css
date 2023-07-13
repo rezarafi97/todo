@@ -30,6 +30,6 @@ a {
   text-decoration: none;
 }
 
-.active {
-  background-color: darkkhaki;
+.active * {
+  color: rgb(170, 170, 170);
 }

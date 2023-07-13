@@ -14,6 +14,8 @@ import DoneTasks from "./pages/DoneTasks.jsx";
 import UndoneTasks from "./pages/UndoneTasks.jsx";
 import { Provider } from "react-redux";
 import { store } from "./store";
+import SignUp from "./pages/signUp/SignUp.jsx";
+import Login from "./pages/login/Login.jsx";
 
 const router = createBrowserRouter([
   {
@@ -34,7 +36,7 @@ const router = createBrowserRouter([
         element: <Important />,
       },
       {
-        path: "/tasksList",
+        path: "/tasksList/all",
         element: <TasksList />,
       },
       {
@@ -60,6 +62,14 @@ const router = createBrowserRouter([
       {
         path: "/tasksList/undone",
         element: <UndoneTasks />,
+      },
+      {
+        path: "/signUp",
+        element: <SignUp />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
     ],
   },

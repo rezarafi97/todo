@@ -37,7 +37,7 @@ const CreateTask = () => {
         setTitle("");
         setContent("");
         setDate("");
-        navigate("/tasksList");
+        navigate("/tasksList/all");
       } catch (error) {
         console.error("Failed to save the blog", error);
       }

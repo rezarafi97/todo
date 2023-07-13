@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Fab, Zoom, Tooltip } from "@mui/material";
 import ScatterPlotIcon from "@mui/icons-material/ScatterPlot";
 import TodayIcon from "@mui/icons-material/Today";
@@ -18,6 +18,7 @@ const FabNavigators = () => {
 
   return (
     <>
+    <Tooltip title="لیست صفحات" placement="right">
       <Fab
         sx={{
           position: "fixed",
@@ -32,6 +33,7 @@ const FabNavigators = () => {
       >
         <ScatterPlotIcon />
       </Fab>
+      </Tooltip>
 
       <Zoom in={open} style={{ transitionDelay: open ? "200ms" : "0ms" }}>
         <Tooltip title="برنامه های امروز" placement="right">
@@ -45,10 +47,11 @@ const FabNavigators = () => {
                 backgroundColor: "rgb(90,90,90)",
               },
             }}
+            className="fab"
           >
-            <Link to="/tasksList/today">
+            <NavLink to="/tasksList/today">
               <TodayIcon sx={{ color: "black", marginTop: "8px" }} />
-            </Link>
+            </NavLink>
           </Fab>
         </Tooltip>
       </Zoom>
@@ -64,10 +67,11 @@ const FabNavigators = () => {
                 backgroundColor: "rgb(90,90,90)",
               },
             }}
+            className="fab"
           >
-            <Link to="/tasksList/important">
+            <NavLink to="/tasksList/important">
               <StarOutlineIcon sx={{ color: "black", marginTop: "8px" }} />
-            </Link>
+            </NavLink>
           </Fab>
         </Tooltip>
       </Zoom>
@@ -83,10 +87,11 @@ const FabNavigators = () => {
                 backgroundColor: "rgb(90,90,90)",
               },
             }}
+            className="fab"
           >
-            <Link to="/tasksList/create-task">
+            <NavLink to="/tasksList/create-task">
               <AddTaskIcon sx={{ color: "black", marginTop: "8px" }} />
-            </Link>
+            </NavLink>
           </Fab>
         </Tooltip>
       </Zoom>
@@ -102,10 +107,11 @@ const FabNavigators = () => {
                 backgroundColor: "rgb(90,90,90)",
               },
             }}
+            className="fab"
           >
-            <Link to="/tasksList">
+            <NavLink to="/tasksList/all">
               <ListIcon sx={{ color: "black", marginTop: "8px" }} />
-            </Link>
+            </NavLink>
           </Fab>
         </Tooltip>
       </Zoom>
@@ -121,10 +127,11 @@ const FabNavigators = () => {
                 backgroundColor: "rgb(90,90,90)",
               },
             }}
+            className="fab"
           >
-            <Link to="/tasksList/done">
+            <NavLink to="/tasksList/done">
               <TaskIcon sx={{ color: "black", marginTop: "8px" }} />
-            </Link>
+            </NavLink>
           </Fab>
         </Tooltip>
       </Zoom>
@@ -140,10 +147,11 @@ const FabNavigators = () => {
                 backgroundColor: "rgb(90,90,90)",
               },
             }}
+            className="fab"
           >
-            <Link to="/tasksList/undone">
+            <NavLink to="/tasksList/undone">
               <AlarmIcon sx={{ color: "black", marginTop: "8px" }} />
-            </Link>
+            </NavLink>
           </Fab>
         </Tooltip>
       </Zoom>

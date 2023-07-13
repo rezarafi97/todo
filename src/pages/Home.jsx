@@ -40,7 +40,7 @@ const Home = () => {
             />
           </TimelineSeparator>
           <TimelineContent sx={{ marginTop: "28px" }}>
-            <Link to="/tasksList">همه برنامه ها</Link>
+            <Link to="/tasksList/all">همه برنامه ها</Link>
           </TimelineContent>
         </TimelineItem>
         <TimelineItem>

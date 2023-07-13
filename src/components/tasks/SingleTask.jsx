@@ -13,7 +13,7 @@ import Grid from "@mui/material/Unstable_Grid2";
 const SingleTask = ({ task }) => {
   return (
     <>
-      <Grid xs={12} md={4} lg={3}>
+      <Grid xs={10} md={4} lg={3}>
         <Card sx={{ backgroundColor: "rgb(220,220,220)" }}>
           <CardContent sx={{ height: "100px" }}>
             <Typography

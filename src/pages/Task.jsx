@@ -124,7 +124,7 @@ const Task = () => {
   const handleDelete = async () => {
     if (task) {
       await deleteTask(task.id);
-      navigate("/tasksList");
+      navigate("/tasksList/all");
     }
   };
 
