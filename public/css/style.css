@@ -12,6 +12,7 @@
 
 * {
   font-family: "Vazir"!important;
+  box-sizing: border-box;
 }
 
 body {
@@ -32,4 +33,8 @@ a {
 
 .active * {
   color: rgb(170, 170, 170);
+}
+
+.none {
+  display: none;
 }
