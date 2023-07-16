@@ -1,5 +1,4 @@
-import { AccountCircle } from "@mui/icons-material";
-import { AppBar, Toolbar, Typography, Box } from "@mui/material";
+import { AppBar, Toolbar, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -22,14 +21,6 @@ const Navbar = () => {
           >
             <Link to="/">برنامه روزانه</Link>
           </Typography>
-          <Box>
-            <Link to="/login">ورود</Link>
-            <Typography component="span" color="rgb(100,100,100)">/</Typography>
-            <Link to="/signUp">ثبت نام</Link>
-          </Box>
-          <Box className="none">
-            <AccountCircle sx={{color: "rgb(100,100,100)"}} />
-          </Box>
         </Toolbar>
       </AppBar>
     </>
